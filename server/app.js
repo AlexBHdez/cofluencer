@@ -32,8 +32,8 @@ const app = express();
 //   origin: 'http://localhost:4200',
 
 // }
-// app.use(cors);
-// app.options('*', cors);
+app.use(cors);
+app.options('*', cors);
 // uncomment after placing your favicon in /public
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
