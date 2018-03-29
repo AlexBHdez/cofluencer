@@ -23,3 +23,9 @@ transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   background-position: center;
   background-size: cover;
 }
+
+.bgImage2 {
+  background-image: url('./../../../assets/img/home/section2.jpg');
+  background-position: center;
+  background-size: cover;
+}

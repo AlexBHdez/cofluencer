@@ -6,10 +6,23 @@ html {
 body {
   margin: 0;
   font-family: 'Assistant', sans-serif;
+  color: #1f271b;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 img {
@@ -20,6 +33,24 @@ img {
 .centerBlock {
   margin-left: auto;
   margin-right: auto;
+}
+
+.textCenter {
+  text-align: center;
+}
+/* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
+
+/* Flex */
+.flex {
+  display: flex;
+}
+
+.sp-between {
+  justify-content: space-between;
+}
+
+.flex-center {
+  justify-content: center;
 }
 /* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
 
@@ -62,11 +93,32 @@ img {
   padding-top: 50px;
 }
 
+.pt-10 {
+  padding-top: 10px;
+}
+
 .pb-100 {
   padding-bottom: 100px;
 }
+
+.pb-50 {
+  padding-bottom: 50px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
 /* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
 
+/* Margin */
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+/* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
 
 /* Opacity */
 .op-4 {
@@ -98,10 +150,19 @@ img {
 }
 /* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
 
-/* Border Radius */
+/* Border */
 .br {
   border-radius: 0.25rem;
 }
+
+.b-top {
+  border-top: 1px solid #a6a4a8;
+}
+
+.b-bottom {
+  border-bottom: 1px solid #a6a4a8;
+}
+
 /* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
 
 /* Shadow */
@@ -122,6 +183,10 @@ img {
   background-color: #1f271b;
 }
 
+.bg-darkJungleGreen2 {
+  background-color: #12160f;
+}
+
 .bg-pineApple {
   background-color: #44355b;
 }
@@ -134,8 +199,24 @@ img {
   background-color: #ee964b;
 }
 
-.grey {
+.bg-grey {
+  background-color: #a6a4a8;
+}
+
+.bg-greyLight {
+  background-color: #fafafa;
+}
+
+.colorGrey {
   color: #a6a4a8;
+}
+
+.colorWhite {
+  color: #ffffff;
+}
+
+.colorStil {
+  color: #f4d35e;
 }
 
 .gradient {
@@ -199,6 +280,12 @@ img {
   text-transform: uppercase;
 }
 /* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
+
+
+
+.hoverWhite:hover {
+  color: #ffffff;
+}
 
 
 .iconMenu {
