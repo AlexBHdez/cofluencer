@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  isHide: boolean;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showLoginPage(): void {
+    this.isHide = !this.isHide;
   }
 
 }
