@@ -8,12 +8,16 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
+    children: [{
+      path: 'login',
+      component: LoginComponent
+    }]
   },
   {
     path: '**', redirectTo: '',
@@ -25,7 +29,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomePageComponent,
-    LoginPageComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

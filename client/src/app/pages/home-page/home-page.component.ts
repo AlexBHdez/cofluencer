@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,13 +10,14 @@ export class HomePageComponent implements OnInit {
 
   isHide: boolean;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   showLoginPage(): void {
     this.isHide = !this.isHide;
+    this.router.navigate(['/login']);
   }
 
 }
