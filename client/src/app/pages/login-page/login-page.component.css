@@ -5,3 +5,52 @@
   position: fixed;
   z-index: 9999;
 }
+
+.loginForm {
+  width: 500px;
+  height: 75vh;
+  min-height: 500px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.loginButton {
+  width: 100%;
+}
+
+.socialIconsLogin {
+  width: 45%;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.facebook {
+  background-color: #3e5b98;
+}
+
+.youtube {
+  background-color: #e02a20;
+}
+
+.twitter {
+  background-color: #4da7de;
+}
+
+.separatorLine {
+  position: relative;
+}
+
+.separatorLine::after {
+  content: "";
+  width: 45%;
+  height: 1px;
+  background-color: tomato;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
