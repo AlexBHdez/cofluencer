@@ -31,8 +31,10 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['signup']);
   }
 
-  onClose(isSignupHide) {
-    this.isSignupHide = isSignupHide;
+  onClose(event) {
+    this.isSignupHide = event.signup;
+    this.isNavHide = event.nav;
+    this.router.navigate(['/']);
   }
 
 }

@@ -9,7 +9,7 @@ export class SignupComponent implements OnInit {
 
   @Input() isSignupHide: boolean;
   @Input() isNavHide: boolean;
-  @Output() close = new EventEmitter<boolean>();
+  @Output() close = new EventEmitter<any>();
 
   constructor() {
   }
@@ -19,7 +19,8 @@ export class SignupComponent implements OnInit {
 
   closeSignup() {
     this.isSignupHide = !this.isSignupHide;
-    this.close.emit(this.isSignupHide);
+    this.isNavHide = !this.isNavHide;
+    this.close.emit({ signup: this.isSignupHide, nav: this.isNavHide });
   }
 
 }
