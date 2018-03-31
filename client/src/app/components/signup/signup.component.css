@@ -1,0 +1,66 @@
+.signupModal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.loginForm {
+  width: 500px;
+  height: 75vh;
+  min-height: 500px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.loginButton {
+  width: 100%;
+}
+
+.socialIconsLogin {
+  width: 45%;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.facebook {
+  background-color: #3e5b98;
+}
+
+.youtube {
+  background-color: #e02a20;
+}
+
+.twitter {
+  background-color: #4da7de;
+}
+
+.separatorLine {
+  position: relative;
+}
+
+.separatorLine::after,
+.separatorLine::before {
+  content: "";
+  width: 42%;
+  height: 1px;
+  background-color: #a6a4a8;
+  position: absolute;
+  top: 40%;
+  box-sizing: border-box;
+}
+
+.separatorLine::after {
+  left: 10px;
+}
+
+.separatorLine::before {
+  right: 10px;
+}
+

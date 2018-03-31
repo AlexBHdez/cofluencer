@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { OpenCloseModalService } from '../../services/open-close-modal.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
   constructor(
     private openModalService: OpenCloseModalService,
@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  closeLoginPage() {
-    this.openModalService.closeLoginPage();
+  closeSignupPage() {
+    this.openModalService.closeSignupPage();
   }
 
 }

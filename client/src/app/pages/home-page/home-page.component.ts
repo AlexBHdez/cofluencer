@@ -1,23 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { OpenCloseModalService } from '../../services/open-close-modal.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
 
-  isHide: boolean;
+  isLoginHide: boolean;
+  isSignupHide: boolean;
+  isNavHide: boolean;
 
-  constructor(private router: Router) { }
+  constructor(
+    private openModalService: OpenCloseModalService
+  ) { }
 
   ngOnInit() {
   }
 
-  showLoginPage(): void {
-    this.isHide = !this.isHide;
-    this.router.navigate(['/login']);
+  openLogin() {
+    this.openModalService.showLoginPage();
+    this.isLoginHide = this.openModalService.isLoginHide;
+    this.isNavHide = this.openModalService.isNavHide;
+  }
+
+  openSignup() {
+    this.openModalService.showSignupPage();
+    this.isSignupHide = this.openModalService.isSignupHide;
+    this.isNavHide = this.openModalService.isNavHide;
   }
 
 }
