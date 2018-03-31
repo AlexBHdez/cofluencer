@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { OpenCloseModalService } from '../../services/open-close-modal.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-signup',
@@ -8,15 +7,19 @@ import { OpenCloseModalService } from '../../services/open-close-modal.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(
-    private openModalService: OpenCloseModalService,
-  ) { }
+  @Input() isSignupHide: boolean;
+  @Input() isNavHide: boolean;
+  @Output() close = new EventEmitter<boolean>();
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  closeSignupPage() {
-    this.openModalService.closeSignupPage();
+  closeSignup() {
+    this.isSignupHide = !this.isSignupHide;
+    this.close.emit(this.isSignupHide);
   }
 
 }

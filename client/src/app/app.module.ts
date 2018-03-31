@@ -9,7 +9,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './components/login/login.component';
-import { OpenCloseModalService } from './services/open-close-modal.service';
 import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
@@ -41,7 +40,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [OpenCloseModalService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

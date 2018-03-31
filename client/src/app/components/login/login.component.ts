@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { OpenCloseModalService } from '../../services/open-close-modal.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +8,11 @@ import { OpenCloseModalService } from '../../services/open-close-modal.service';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private openModalService: OpenCloseModalService,
+
   ) { }
 
   ngOnInit() {
   }
 
-  closeLoginPage() {
-    this.openModalService.closeLoginPage();
-  }
 
 }
