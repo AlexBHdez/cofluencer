@@ -33,3 +33,62 @@ transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
 .socialFooter span {
   font-size: 2rem;
 }
+
+.iconMenu {
+  width: 30px;
+  margin-top: 5px;
+}
+
+.iconMenu [class^=bar] {
+  background-color: #fff;
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.iconMenu .bar1 {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+.navbar-nav .nav-item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.navbar-nav .nav-item:last-child p {
+  color: #fff;
+}
+
+.navbar-nav .nav-item .nav-link p:hover {
+  color: #fff;
+}
+
+.navbar-nav .nav-item .nav-link p {
+  position: relative;
+}
+
+.navbar-nav .nav-item:not(:last-child) .nav-link p:hover::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 1.5px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+.navbar .nav-item .nav-link:hover {
+  background-color: transparent;
+}
+
+.verticalSeparator {
+  display: inline-block;
+  vertical-align: sub;
+  width: 2px;
+  height: 30px;
+  opacity: .1;
+  background-color: #a6a4a8;
+
+}
+
