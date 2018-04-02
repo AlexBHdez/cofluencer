@@ -11,6 +11,7 @@ export class HomePageComponent implements OnInit {
   isLoginHide: boolean;
   isSignupHide: boolean;
   isNavHide: boolean;
+  isMenuHide: boolean;
 
   constructor(
     private router: Router,
@@ -19,10 +20,26 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
+  openMenu() {
+    this.isMenuHide = !this.isMenuHide;
+    this.isNavHide = !this.isNavHide;
+  }
+
+  onCloseMenu(event) {
+    this.isMenuHide = event.menu;
+    this.isNavHide = event.nav;
+  }
+
   openLogin() {
     this.isLoginHide = !this.isLoginHide;
     this.isNavHide = !this.isNavHide;
     this.router.navigate(['login']);
+  }
+
+  onCloseLogin(event) {
+    this.isLoginHide = event.login;
+    this.isNavHide = event.nav;
+    this.router.navigate(['/']);
   }
 
   openSignup() {
@@ -31,7 +48,7 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['signup']);
   }
 
-  onClose(event) {
+  onCloseSignup(event) {
     this.isSignupHide = event.signup;
     this.isNavHide = event.nav;
     this.router.navigate(['/']);

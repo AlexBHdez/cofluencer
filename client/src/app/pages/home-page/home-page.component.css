@@ -39,6 +39,10 @@ transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   margin-top: 5px;
 }
 
+#navLogo {
+  width: 50%;
+}
+
 .iconMenu [class^=bar] {
   background-color: #fff;
   display: block;
@@ -92,3 +96,23 @@ transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
 
 }
 
+#signupButton {
+  border-color: white;
+}
+
+#signupButton:hover {
+  background-color: #28afb0;
+  border-color: #28afb0;
+}
+
+#login {
+  cursor: pointer;
+}
+
+@media (max-width: 980px) {
+
+  #navLogo {
+    width: 100%;
+  }
+
+}
