@@ -3,7 +3,9 @@ const bcrypt = require('bcrypt');
 
 const router = express.Router();
 
-const User = require('../models/user');
+const Company = require('../models/company');
+const Influencer = require('../models/influencer');
+const Campaign = require('../models/campaign');
 const { isLoggedIn } = require('../helpers/middleware');
 
 router.get('/me', (req, res, next) => {
