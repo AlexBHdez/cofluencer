@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  isLoginHide: boolean;
   isSignupHide: boolean;
-  isNavHide: boolean;
+  isLoginHide: boolean;
+  isMenuHide: boolean;
 
   constructor(
     private router: Router,
@@ -19,20 +19,26 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  openLogin() {
-    this.isLoginHide = !this.isLoginHide;
-    this.isNavHide = !this.isNavHide;
-    this.router.navigate(['login']);
-  }
-
-  openSignup() {
+  signupControl() {
     this.isSignupHide = !this.isSignupHide;
-    this.isNavHide = !this.isNavHide;
-    this.router.navigate(['signup']);
+    if (!this.isSignupHide) {
+      this.router.navigate(['/']);
+    } else {
+      this.router.navigate(['/signup']);
+    }
   }
 
-  onClose(isSignupHide) {
-    this.isSignupHide = isSignupHide;
+  loginControl() {
+    this.isLoginHide = !this.isLoginHide;
+    if (!this.isLoginHide) {
+      this.router.navigate(['/']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
+
+  menuControl() {
+    this.isMenuHide = !this.isMenuHide;
   }
 
 }

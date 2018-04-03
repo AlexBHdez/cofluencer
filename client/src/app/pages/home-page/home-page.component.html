@@ -1,63 +1,47 @@
-<app-login *ngIf="isLoginHide"></app-login>
-<app-signup *ngIf="isSignupHide" [isSignupHide]="isSignupHide" [isNavHide]="isNavHide" (close)="onClose($event)"></app-signup>
+<app-signup id="signupModal" [hidden]="!isSignupHide" (close)="signupControl()"></app-signup>
+<app-login id="loginModal" [hidden]="!isLoginHide" (close)="loginControl()"></app-login>
+<app-mobile-menu [hidden]="!isMenuHide" (close)="menuControl()"></app-mobile-menu>
 
-<header>
-  <nav *ngIf="!isNavHide" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400">
+<header [hidden]="isSignupHide || isLoginHide">
+  <nav [hidden]="isMenuHide" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400">
     <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand w-115" href="/" rel="tooltip"
-          data-placement="bottom">
+      <div class="navbar-translate" id="navLogo">
+        <a class="navbar-brand w-115" href="/" rel="tooltip" data-placement="bottom">
           <img src="../../../assets/img/brand/logo-light.png" alt="logo-cofluencer">
         </a>
-        <!-- <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar bar1"></span>
-          <span class="navbar-toggler-bar bar2"></span>
-          <span class="navbar-toggler-bar bar3"></span>
-        </button> -->
-        <div class="iconMenu">
-          <img src="../../../assets/img/icons/iconMenuLight.png" alt="menu-icon">
+        <div class="iconMenu" (click)="menuControl()">
+          <span class="bar1"></span>
+          <span class="bar2"></span>
         </div>
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav flex flex-middle">
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
-              <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-              <p>Download</p>
+            <a class="nav-link" href="" onclick="scrollToDownload()">
+              <p class="bodyTextBold capitalize colorGrey">Influencers</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./documentation/tutorial-components.html" target="_blank">
-              <i class="now-ui-icons files_paper"></i>
-              <p>Components</p>
+            <a class="nav-link" href="">
+              <p class="bodyTextBold capitalize colorGrey">Brands</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-neutral" href="https://www.creative-tim.com/product/now-ui-kit-pro" target="_blank">
-              <i class="now-ui-icons arrows-1_share-66"></i>
-              <p>Upgrade to PRO</p>
+            <a class="nav-link" href="">
+              <p class="bodyTextBold capitalize colorGrey">About us</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim"
-              target="_blank">
-              <i class="fa fa-twitter"></i>
-              <p class="d-lg-none d-xl-none">Twitter</p>
+            <div class="verticalSeparator"></div>
+          </li>
+          <li class="nav-item" (click)="loginControl()" id="login">
+            <a class="nav-link" rel="tooltip">
+              <p class="bodyTextBold capitalize colorGrey">Login</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim"
-              target="_blank">
-              <i class="fa fa-facebook-square"></i>
-              <p class="d-lg-none d-xl-none">Facebook</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial"
-              target="_blank">
-              <i class="fa fa-instagram"></i>
-              <p class="d-lg-none d-xl-none">Instagram</p>
+            <a class="nav-link btn btn-primary btn-simple btn-round" id="signupButton" rel="tooltip" (click)="signupControl()">
+            <p class="bodyTextBold capitalize">Signup</p>
             </a>
           </li>
         </ul>
@@ -74,15 +58,15 @@
           <img class="n-logo" src="./assets/img/now-logo.png" alt="">
           <h1 class="h1-seo h1">Let your influence work.</h1>
           <h3>Connect with thousands of brands and find your perfect campaign.</h3>
-          <button class="btn btn-lg btn-primary h4" (click)="openSignup()" >Sign up</button>
+          <button class="btn btn-lg btn-primary btn-round h4" (click)="signupControl()" >Sign up</button>
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<main class="">
-  <section class="pt-100 pb-100">
+<main [hidden]="isSignupHide || isLoginHide" class="">
+  <section class="pt-100 pb-100" id="influencers">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-6 pt-50 sectionText">
@@ -100,7 +84,7 @@
     </div>
   </section>
     
-  <section class="pt-100 pb-100 bg-greyLight">
+  <section class="pt-100 pb-100 bg-greyLight" id="brands">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-6 pt-50 sectionText">
@@ -117,7 +101,7 @@
       </div>
     </div>
   </section>
-  <section class="pt-100 pb-100">
+  <section class="pt-100 pb-100" id="aboutus">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-6 pt-50 sectionText">
@@ -135,7 +119,7 @@
   </section>
 </main>
 
-<footer class="bg-darkJungleGreen">
+<footer [hidden]="isSignupHide || isLoginHide" class="bg-darkJungleGreen">
   <div class="container">
     <div class="content-center textCenter pt-50 pb-50">
         <h3 class="h1 colorWhite textCenter mb-0">Your influence, your brand.</h3>

@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
 
 import { IgDatauserService } from './services/ig-datauser.service';
 
@@ -18,8 +19,8 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     children: [
-      { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
+      { path: 'login', component: LoginComponent },
     ]
   },
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
     AppComponent,
     HomePageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,
