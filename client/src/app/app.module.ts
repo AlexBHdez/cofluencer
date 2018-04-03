@@ -11,6 +11,8 @@ import { HttpModule } from '@angular/http';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 
+import { IgDatauserService } from './services/ig-datauser.service';
+
 const routes: Routes = [
   {
     path: '',
@@ -40,7 +42,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [IgDatauserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
