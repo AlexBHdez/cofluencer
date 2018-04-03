@@ -19,15 +19,12 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  signupControl(event) {
+  signupControl() {
     this.isSignupHide = !this.isSignupHide;
     if (!this.isSignupHide) {
       this.router.navigate(['/']);
     } else {
       this.router.navigate(['/signup']);
-    }
-    if (event === 'login') {
-      this.loginControl();
     }
   }
 

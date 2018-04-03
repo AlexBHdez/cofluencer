@@ -6,7 +6,7 @@
         <a class="navbar-brand w-115" href="/" rel="tooltip" data-placement="bottom">
           <img src="../../../assets/img/brand/logo-dark.png" alt="logo-cofluencer">
         </a>
-        <div class="iconMenu" (click)="closeSignup('close')">
+        <div class="iconMenu" (click)="closeSignup()">
           <span class="bar1"></span>
           <span class="bar2"></span>
         </div>
@@ -66,7 +66,7 @@
               <button type="submit" class="btn btn-round btn-primary loginButton h4">Sign up</button>
             </div>
             <p class="bodyText">Already have an account?
-              <a (click)="closeSignup('login')">Log in</a>
+              <a (click)="closeSignup()">Log in</a>
             </p>
           </div>
         </form>

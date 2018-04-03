@@ -16,13 +16,7 @@ export class SignupComponent implements OnInit {
   }
 
   closeSignup(event) {
-    if (event === 'login') {
-      this.close.emit(event);
-      console.log(event);
-    } else {
-      this.close.emit(event);
-      console.log(event);
-    }
+      this.close.emit();
   }
 
 }
