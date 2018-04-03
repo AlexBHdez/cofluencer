@@ -7,8 +7,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  @Input() isLoginHide: boolean;
-  @Input() isNavHide: boolean;
   @Output() close = new EventEmitter<any>();
 
   constructor(
@@ -19,9 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   closeLogin() {
-    this.isLoginHide = !this.isLoginHide;
-    this.isNavHide = !this.isNavHide;
-    this.close.emit({ login: this.isLoginHide, nav: this.isNavHide });
+    this.close.emit();
   }
 
 

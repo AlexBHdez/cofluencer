@@ -7,8 +7,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  @Input() isSignupHide: boolean;
-  @Input() isNavHide: boolean;
   @Output() close = new EventEmitter<any>();
 
   constructor() {
@@ -17,10 +15,14 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
-  closeSignup() {
-    this.isSignupHide = !this.isSignupHide;
-    this.isNavHide = !this.isNavHide;
-    this.close.emit({ signup: this.isSignupHide, nav: this.isNavHide });
+  closeSignup(event) {
+    if (event === 'login') {
+      this.close.emit(event);
+      console.log(event);
+    } else {
+      this.close.emit(event);
+      console.log(event);
+    }
   }
 
 }

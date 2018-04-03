@@ -8,9 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  isLoginHide: boolean;
   isSignupHide: boolean;
-  isNavHide: boolean;
+  isLoginHide: boolean;
   isMenuHide: boolean;
 
   constructor(
@@ -20,38 +19,29 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  openMenu() {
-    this.isMenuHide = !this.isMenuHide;
-    this.isNavHide = !this.isNavHide;
-  }
-
-  onCloseMenu(event) {
-    this.isMenuHide = event.menu;
-    this.isNavHide = event.nav;
-  }
-
-  openLogin() {
-    this.isLoginHide = !this.isLoginHide;
-    this.isNavHide = !this.isNavHide;
-    this.router.navigate(['login']);
-  }
-
-  onCloseLogin(event) {
-    this.isLoginHide = event.login;
-    this.isNavHide = event.nav;
-    this.router.navigate(['/']);
-  }
-
-  openSignup() {
+  signupControl(event) {
     this.isSignupHide = !this.isSignupHide;
-    this.isNavHide = !this.isNavHide;
-    this.router.navigate(['signup']);
+    if (!this.isSignupHide) {
+      this.router.navigate(['/']);
+    } else {
+      this.router.navigate(['/signup']);
+    }
+    if (event === 'login') {
+      this.loginControl();
+    }
   }
 
-  onCloseSignup(event) {
-    this.isSignupHide = event.signup;
-    this.isNavHide = event.nav;
-    this.router.navigate(['/']);
+  loginControl() {
+    this.isLoginHide = !this.isLoginHide;
+    if (!this.isLoginHide) {
+      this.router.navigate(['/']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
+
+  menuControl() {
+    this.isMenuHide = !this.isMenuHide;
   }
 
 }

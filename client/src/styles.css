@@ -158,16 +158,24 @@ img {
   margin-top: 30px;
 }
 
-.mt-100 {
-  margin-top: 100px;
-}
-
 .mt-40 {
   margin-top: 40px;
 }
 
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
 .mb-10 {
   margin-bottom: 10px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
 }
 /* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
 

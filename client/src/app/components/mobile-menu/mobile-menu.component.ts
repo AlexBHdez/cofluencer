@@ -17,9 +17,7 @@ export class MobileMenuComponent implements OnInit {
   }
 
   closeMenu() {
-    this.isMenuHide = !this.isMenuHide;
-    this.isNavHide = !this.isNavHide;
-    this.close.emit({ menu: this.isMenuHide, nav: this.isNavHide });
+    this.close.emit();
   }
 
 }

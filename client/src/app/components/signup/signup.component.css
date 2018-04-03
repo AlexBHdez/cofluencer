@@ -1,14 +1,11 @@
 .signupModal {
   width: 100%;
-  height: 100vh;
-  position: relative;
   z-index: 9999;
   background-color: rgba(248, 250, 253, .95);
 }
 
-.loginForm {
+.signUpForm {
   width: 500px;
-  height: 80vh;
   min-height: 650px;
   background-color: #ffffff;
   border-radius: 4px;
@@ -147,6 +144,22 @@
     width: 100%;
   }
 
+}
+
+@media (max-width: 450px) {
+  .title {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socialLogin {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socialIconsLogin {
+    width: 100%;
+  }
 }
 
 

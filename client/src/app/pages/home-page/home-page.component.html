@@ -1,16 +1,15 @@
-<header>
-  <app-login *ngIf="isLoginHide" [isLoginHide]="isLoginHide" [isNavHide]="isNavHide" (close)="onCloseLogin($event)"></app-login>
-  <app-signup *ngIf="isSignupHide" [isSignupHide]="isSignupHide" [isNavHide]="isNavHide" (close)="onCloseSignup($event)"></app-signup>
-  <app-mobile-menu *ngIf="isMenuHide" [isMenuHide]="isMenuHide" [isNavHide]="isNavHide" (close)="onCloseMenu($event)"></app-mobile-menu>
+<app-signup id="signupModal" [hidden]="!isSignupHide" (close)="signupControl(event)"></app-signup>
+<app-login id="loginModal" [hidden]="!isLoginHide" (close)="loginControl()"></app-login>
+<app-mobile-menu [hidden]="!isMenuHide" (close)="menuControl()"></app-mobile-menu>
 
-  <nav *ngIf="!isNavHide" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400">
+<header [hidden]="isSignupHide || isLoginHide">
+  <nav [hidden]="isMenuHide" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400">
     <div class="container">
       <div class="navbar-translate" id="navLogo">
-        <a class="navbar-brand w-115" href="/" rel="tooltip"
-          data-placement="bottom">
+        <a class="navbar-brand w-115" href="/" rel="tooltip" data-placement="bottom">
           <img src="../../../assets/img/brand/logo-light.png" alt="logo-cofluencer">
         </a>
-        <div class="iconMenu" (click)="openMenu()">
+        <div class="iconMenu" (click)="menuControl()">
           <span class="bar1"></span>
           <span class="bar2"></span>
         </div>
@@ -35,13 +34,13 @@
           <li class="nav-item">
             <div class="verticalSeparator"></div>
           </li>
-          <li class="nav-item" (click)="openLogin()" id="login">
+          <li class="nav-item" (click)="loginControl()" id="login">
             <a class="nav-link" rel="tooltip">
               <p class="bodyTextBold capitalize colorGrey">Login</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-primary btn-simple btn-round" id="signupButton" rel="tooltip" (click)="openSignup()">
+            <a class="nav-link btn btn-primary btn-simple btn-round" id="signupButton" rel="tooltip" (click)="signupControl()">
             <p class="bodyTextBold capitalize">Signup</p>
             </a>
           </li>
@@ -59,14 +58,14 @@
           <img class="n-logo" src="./assets/img/now-logo.png" alt="">
           <h1 class="h1-seo h1">Let your influence work.</h1>
           <h3>Connect with thousands of brands and find your perfect campaign.</h3>
-          <button class="btn btn-lg btn-primary btn-round h4" (click)="openSignup()" >Sign up</button>
+          <button class="btn btn-lg btn-primary btn-round h4" (click)="signupControl()" >Sign up</button>
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<main class="">
+<main [hidden]="isSignupHide || isLoginHide" class="">
   <section class="pt-100 pb-100" id="influencers">
     <div class="container">
       <div class="row">
@@ -120,7 +119,7 @@
   </section>
 </main>
 
-<footer class="bg-darkJungleGreen">
+<footer [hidden]="isSignupHide || isLoginHide" class="bg-darkJungleGreen">
   <div class="container">
     <div class="content-center textCenter pt-50 pb-50">
         <h3 class="h1 colorWhite textCenter mb-0">Your influence, your brand.</h3>
