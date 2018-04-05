@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 import { IgDatauserService } from './services/ig-datauser.service';
+import { AppPageComponent } from './pages/app-page/app-page.component';
+import { InstagramInfoComponent } from './components/instagram-info/instagram-info.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,10 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent },
       { path: 'login', component: LoginComponent },
     ]
+  },
+  {
+    path: 'app',
+    component: AppPageComponent,
   },
   {
     path: '**', redirectTo: '',
@@ -35,7 +41,9 @@ const routes: Routes = [
     HomePageComponent,
     LoginComponent,
     SignupComponent,
-    MobileMenuComponent
+    MobileMenuComponent,
+    AppPageComponent,
+    InstagramInfoComponent
   ],
   imports: [
     BrowserModule,
