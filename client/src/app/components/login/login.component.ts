@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   @Output() close = new EventEmitter<any>();
+  @Output() change = new EventEmitter<any>();
 
   constructor(
 
@@ -20,5 +21,8 @@ export class LoginComponent implements OnInit {
     this.close.emit();
   }
 
+  changeModal(event) {
+    this.change.emit(event);
+  }
 
 }

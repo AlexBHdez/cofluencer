@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SignupComponent implements OnInit {
 
   @Output() close = new EventEmitter<any>();
+  @Output() change = new EventEmitter<any>();
 
   constructor() {
   }
@@ -17,6 +18,10 @@ export class SignupComponent implements OnInit {
 
   closeSignup(event) {
       this.close.emit();
+  }
+
+  changeModal(event) {
+    this.change.emit(event);
   }
 
 }

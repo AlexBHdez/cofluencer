@@ -11,6 +11,7 @@ import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.compon
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { ModalComponent } from './components/modal/modal.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
     HomePageComponent,
     LoginComponent,
     SignupComponent,
-    MobileMenuComponent
+    MobileMenuComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

@@ -44,6 +44,7 @@ img {
 .block {
   display: block;
 }
+
 /* --··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··----··--··--··--··--··-- */
 
 /* Flex */
@@ -51,7 +52,7 @@ img {
   display: flex;
 }
 
-.flex.column {
+.flex-column {
   flex-direction: column;
 }
 
@@ -164,6 +165,10 @@ img {
 
 .mt-50 {
   margin-top: 50px;
+}
+
+.mt-60 {
+  margin-top: 60px;
 }
 
 .mt-100 {
