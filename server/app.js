@@ -4,7 +4,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cors = require('cors')();
+// const cors = require('cors')();
 const session = require('express-session');
 
 const api = require('./routes/api');
@@ -32,8 +32,8 @@ const app = express();
 //   origin: 'http://localhost:4200',
 
 // }
-app.use(cors);
-app.options('*', cors);
+// app.use(cors);
+// app.options('*', cors);
 // uncomment after placing your favicon in /public
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');

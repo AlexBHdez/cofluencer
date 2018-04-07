@@ -49,14 +49,13 @@ router.post('/signup', (req, res, next) => {
     return res.status(401).json({ error: 'unauthorized' });
   }
 
-  const username = req.body.username;
-  const password = req.body.password;
+  const { username, password } = req.body;
 
   if (!username || !password) {
     return res.status(422).json({ error: 'validation' });
   }
 
-  User.findOne({ username }, 'username')
+  Company.findOne({ username }, 'username')
     .then((userExists) => {
       if (userExists) {
         return res.status(422).json({ error: 'username-not-unique' });
@@ -65,9 +64,20 @@ router.post('/signup', (req, res, next) => {
       const salt = bcrypt.genSaltSync(10);
       const hashPass = bcrypt.hashSync(password, salt);
 
-      const newUser = User({
+      const newUser = Company({
         username,
+        email: '',
         password: hashPass,
+        address: {
+          street: '',
+          city: '',
+          state: '',
+          zip: '',
+        },
+        bio: '',
+        profileImage: '',
+        socialLinks: [{}],
+        tags: [],
       });
 
       return newUser.save().then(() => {
