@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const cors = require('cors')();
 const session = require('express-session');
 
-const rutas = require('./routes/rutas');
+const api = require('./routes/api');
 const auth = require('./routes/auth');
 
 require('dotenv').config();
@@ -56,7 +56,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/auth', auth);
-app.use('/api', rutas);
+app.use('/api', api);
 
 app.use((req, res) => {
   res.sendfile(`${__dirname}/public/index.html`);
