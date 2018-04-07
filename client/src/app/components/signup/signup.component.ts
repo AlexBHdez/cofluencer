@@ -32,9 +32,8 @@ export class SignupComponent implements OnInit {
   signup() {
     this.session
       .signup(this.formInfo)
-      .then(user => (this.user = user))
-      .then((user) => {
-        console.log(user);
+      .then(user => {
+        this.user = user;
         this.router.navigate(['app']);
       })
       .catch(err => (this.error = err));

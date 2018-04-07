@@ -22,14 +22,13 @@ router.post('/login', (req, res, next) => {
     return res.status(401).json({ error: 'unauthorized' });
   }
 
-  const username = req.body.username;
-  const password = req.body.password;
+  const { username, password } = req.body;
 
   if (!username || !password) {
     return res.status(422).json({ error: 'validation' });
   }
 
-  User.findOne({ username })
+  Company.findOne({ username })
     .then((user) => {
       if (!user) {
         return res.status(404).json({ error: 'not-found' });
@@ -37,9 +36,8 @@ router.post('/login', (req, res, next) => {
       if (bcrypt.compareSync(password, user.password)) {
         req.session.currentUser = user;
         return res.json(user);
-      } else {
-        return res.status(404).json({ error: 'not-found' });
       }
+      return res.status(404).json({ error: 'not-found' });
     })
     .catch(next);
 });

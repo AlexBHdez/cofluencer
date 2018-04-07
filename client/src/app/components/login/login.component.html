@@ -22,20 +22,20 @@
             <p class="textCenter or bodyText colorGrey">or</p>
           </div>
         </div>
-        <form action="" class="row mt-40">
+        <form class="row mt-40">
           <div class="col-12">
             <div class="form-group">
-              <input type="text" value="" placeholder="Your name" class="form-control">
+              <input [(ngModel)]="formInfo.username" name="username" type="text" value="" placeholder="Your name" class="form-control">
             </div>
           </div>
           <div class="col-12">
             <div class="form-group">
-              <input type="password" value="" placeholder="Your password" class="form-control">
+              <input [(ngModel)]="formInfo.password" name="password" type="password" value="" placeholder="Your password" class="form-control">
             </div>
           </div>
           <div class="col-12">
             <div class="form-group">
-              <button type="submit" class="btn btn-round btn-primary loginButton h4">Sign up</button>
+              <button (click)="login()" class="btn btn-round btn-primary loginButton h4">Log in</button>
             </div>
             <p class="bodyText">No account?
               <a (click)="changeModal('signup')">Sign up</a>
