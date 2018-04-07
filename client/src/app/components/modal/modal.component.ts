@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -10,7 +11,9 @@ export class ModalComponent implements OnInit {
   @Input() optionLoginSignup: string;
   @Output() closeModal = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
@@ -22,8 +25,10 @@ export class ModalComponent implements OnInit {
   changeModal(option) {
     if (option === 'login') {
       this.optionLoginSignup = 'login';
+      this.router.navigate(['login']);
     } else if (option === 'signup') {
       this.optionLoginSignup = 'signup';
+      this.router.navigate(['signup']);
     }
   }
 

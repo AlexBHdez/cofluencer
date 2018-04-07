@@ -27,13 +27,16 @@ export class HomePageComponent implements OnInit {
     this.toggleModal = !this.toggleModal;
     if (option === 'login') {
       this.optionLoginSignup = 'login';
+      this.router.navigate(['login']);
     } else if (option === 'signup') {
       this.optionLoginSignup = 'signup';
+      this.router.navigate(['signup']);
     }
   }
 
   onCloseModal() {
     this.toggleModal = !this.toggleModal;
+    this.router.navigate(['/']);
   }
 
 }

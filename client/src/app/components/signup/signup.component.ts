@@ -33,6 +33,10 @@ export class SignupComponent implements OnInit {
     this.session
       .signup(this.formInfo)
       .then(user => (this.user = user))
+      .then((user) => {
+        console.log(user);
+        this.router.navigate(['app']);
+      })
       .catch(err => (this.error = err));
   }
 
