@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { AuthService } from './services/auth.service';
+import { RequireAnonGuardService } from './guards/require-anon-guard.service';
+import { RequireUserGuardService } from './guards/require-user-guard.service';
+import { InitAuthGuardService } from './guards/init-auth-guard.service';
+
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginComponent } from './components/login/login.component';
@@ -21,14 +26,24 @@ const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
+    canActivate: [InitAuthGuardService],
     children: [
-      { path: 'signup', component: SignupComponent },
-      { path: 'login', component: LoginComponent },
+      {
+        path: 'signup',
+        component: SignupComponent,
+        canActivateChild: [RequireAnonGuardService]
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+        canActivateChild: [RequireAnonGuardService]
+      },
     ]
   },
   {
     path: 'app',
     component: AppPageComponent,
+    canActivate: [RequireUserGuardService]
   },
   {
     path: '**', redirectTo: '',
@@ -54,7 +69,13 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [IgDatauserService],
+  providers: [
+    IgDatauserService,
+    AuthService,
+    RequireUserGuardService,
+    RequireAnonGuardService,
+    InitAuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
